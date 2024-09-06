@@ -1,89 +1,86 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import Image from 'next/image';
 import PropTypes from 'prop-types';
-import { useInView } from 'react-intersection-observer';
+import Countdown from 'react-countdown';
 
-import AnimatedLogos from 'components/shared/animated-logos';
-import BlinkingText from 'components/shared/blinking-text';
-import ElephantWebglAnimation from 'components/shared/elephant-webgl-animation';
-import GradientLabel from 'components/shared/gradient-label';
 import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEVELOPER_DAYS_3_FORM_ID } from 'constants/forms';
-import ArrowLeftIcon from 'icons/arrow-left-thin.inline.svg';
+import illustration from 'images/deploy/illustration.jpg';
 
-// eslint-disable-next-line no-unused-vars
-const EmailRegistrationStep = ({ onSuccessCallback }) => {
-  const [titleRef, isTitleInView, titleEntry] = useInView({ triggerOnce: true, threshold: 0.5 });
-
-  const titleContent = (
-    <BlinkingText parentElement={titleEntry?.target} shouldAnimationStart={isTitleInView}>
-      {'Neon Developer Days 2023'.split('').map((letter, index) =>
-        index === 14 ? (
-          <span key={index}>
-            <br className="xl:hidden" />
-            <span className="hidden xl:inline"> </span>
-          </span>
-        ) : (
-          <span
-            className="animate-text-blink xl:!animate-none"
-            style={{ animationPlayState: 'paused' }}
-            key={index}
-          >
-            {letter}
-          </span>
-        )
-      )}
-    </BlinkingText>
-  );
-
+const renderer = ({ days, hours, minutes, seconds, completed }) => {
+  if (completed) {
+    // Render a completed state
+    return <div>Event has started!</div>;
+  }
+  // Render a countdown
   return (
-    <>
-      <motion.div
-        className="relative z-10 col-span-4 col-start-2 self-center 2xl:col-start-1 2xl:col-span-5 xl:col-span-full xl:self-end xl:text-center xl:!opacity-100"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2, ease: 'linear' }}
-      >
-        <GradientLabel className="inline-block" theme="green">
-          November 2nd
-        </GradientLabel>
-        <h1
-          className="mt-4 text-[82px] font-semibold leading-none tracking-tighter text-white 2xl:text-6xl xl:mt-2 xl:text-center xl:text-[78px] xl:tracking-[-0.05em] lg:text-[58px] md:mt-1 md:text-[52px]"
-          ref={titleRef}
-        >
-          {titleContent}
-        </h1>
-        <p className="mt-6 max-w-xl text-xl font-light tracking-[-0.02em] leading-[1.3] text-white 2xl:text-lg xl:mx-auto xl:max-w-md lg:mt-4 lg:max-w-sm lg:text-base md:max-w-[80%]">
-          Join us at{' '}
-          <time className="text-primary-4" dateTime="2023-11-02T10:00">
-            10:00 AM PT, November 2nd
-          </time>{' '}
-          for presentations about Postgres, scalability, AI, and using Neon with modern developer
-          tools.
-        </p>
-        <Link
-          className="inline-flex items-end text-primary-4 mt-[18px] text-lg leading-none tracking-[-0.02em] underline decoration-primary-4/40 underline-offset-[8px] hover:decoration-primary-4 transition-colors duration-200 lg:text-base"
-          href="/agenda"
-        >
-          <span>Check out the agenda</span>
-          <ArrowLeftIcon className="ml-2.5 w-[18px] h-auto rotate-180" />
-        </Link>
-        <SubscriptionForm
-          className="mt-[58px] xl:mx-auto xl:mt-10 lg:mt-8 md:mt-7"
-          successText="Thanks for registering!"
-          submitButtonText="Register"
-          size="sm"
-          localStorageKey="submittedEmailDeveloperDays3Form"
-          formId={HUBSPOT_DEVELOPER_DAYS_3_FORM_ID}
-        />
-        <AnimatedLogos className="mt-14 sm:mt-10" />
-      </motion.div>
-      <ElephantWebglAnimation />
-    </>
+    <span className="text-base font-medium leading-none text-white">
+      <span className="w-10 h-8 rounded inline-flex justify-center items-center bg-[#0C0D0D]">
+        {days.toString().padStart(2, '0')}d
+      </span>{' '}
+      :{' '}
+      <span className="w-10 h-8 rounded inline-flex justify-center items-center bg-[#0C0D0D]">
+        {hours.toString().padStart(2, '0')}h
+      </span>{' '}
+      :{' '}
+      <span className="w-10 h-8 rounded inline-flex justify-center items-center bg-[#0C0D0D]">
+        {minutes.toString().padStart(2, '0')}m
+      </span>{' '}
+      :{' '}
+      <span className="w-10 h-8 rounded inline-flex justify-center items-center bg-[#0C0D0D]">
+        {seconds.toString().padStart(2, '0')}s
+      </span>
+    </span>
   );
 };
+
+const CountdownTimer = () => {
+  const targetDate = new Date('2024-11-02T18:00:00Z').getTime();
+  const now = new Date().getTime();
+  const difference = targetDate - now;
+
+  return <Countdown date={Date.now() + difference} renderer={renderer} />;
+};
+
+// eslint-disable-next-line no-unused-vars
+const EmailRegistrationStep = ({ onSuccessCallback }) => (
+  <div className="relative pt-[440px]">
+    <Image
+      className="absolute w-[1279px] h-auto left-1/2 -translate-x-1/2 -top-[88px]"
+      src={illustration}
+      alt="Neon Deploy"
+      width={1279}
+      height={808}
+    />
+    <div className="flex flex-col justify-center text-center items-center relative z-10">
+      <div className="relative flex flex-col items-center">
+        <CountdownTimer />
+        <div className="relative overflow-hidden mt-3.5">
+          <time
+            className="relative text-[32px] tracking-tight leading-[1.2] text-white"
+            dateTime="2024-11-02T10:00:00Z"
+          >
+            November 2nd, 2024 <br /> 10:00 AM PT
+          </time>
+          {/* <span className="absolute w-[214px] h-[60px] bottom-[calc(100%-10px)] left-1/2 -translate-x-1/2 bg-[#66B2DD] rounded-full blur-[30px] opacity-70 pointer-events-none mix-blend-multiply" /> */}
+        </div>
+      </div>
+      <p className="font-light text-lg leading-[1.3] mt-3 text-gray-60 max-w-[448px]">
+        Join us for presentations about Postgres, scalability, AI, and using Neon with modern
+        developer tools.
+      </p>
+      <SubscriptionForm
+        className="mt-8 md:mt-7"
+        successText="Thanks for registering!"
+        submitButtonText="Register"
+        size="sm"
+        localStorageKey="submittedEmailDeveloperDays3Form"
+        formId={HUBSPOT_DEVELOPER_DAYS_3_FORM_ID}
+      />
+    </div>
+  </div>
+);
 
 EmailRegistrationStep.propTypes = {
   onSuccessCallback: PropTypes.func,

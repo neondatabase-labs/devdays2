@@ -1,6 +1,6 @@
 'use client';
 
-import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
+// import { Alignment, Fit, Layout, useRive } from '@rive-app/react-canvas';
 import clsx from 'clsx';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useRouter } from 'next/navigation';
@@ -58,15 +58,15 @@ const SubscriptionForm = ({
     pageUri: href,
   };
 
-  const { RiveComponent } = useRive({
-    src: '/animations/input-lines.riv',
-    autoplay: true,
-    stateMachines: 'State Machine 1',
-    layout: new Layout({
-      fit: Fit.FitWidth,
-      alignment: Alignment.TopCenter,
-    }),
-  });
+  // const { RiveComponent } = useRive({
+  //   src: '/animations/input-lines.riv',
+  //   autoplay: true,
+  //   stateMachines: 'State Machine 1',
+  //   layout: new Layout({
+  //     fit: Fit.FitWidth,
+  //     alignment: Alignment.TopCenter,
+  //   }),
+  // });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -153,7 +153,7 @@ const SubscriptionForm = ({
     >
       <input
         className={clsx(
-          'remove-autocomplete-styles relative z-20 block w-full rounded-full border-primary-3 bg-black pr-[150px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 placeholder:font-normal xl:placeholder:text-base',
+          'remove-autocomplete-styles relative z-20 block w-full rounded-full border-white/30 bg-black pr-[150px] font-semibold leading-none text-white placeholder-gray-5 outline-none transition-colors duration-200 placeholder:font-normal xl:placeholder:text-base',
           errorMessage && 'border-secondary-1',
           sizeClassNames[size].input
         )}
@@ -166,7 +166,7 @@ const SubscriptionForm = ({
         onChange={handleInputChange}
       />
 
-      <RiveComponent className="pointer-events-none absolute -top-8 left-1/2 z-10 w-[120%] -translate-x-1/2 [&>*]:!min-h-[360px]" />
+      {/* <RiveComponent className="pointer-events-none absolute -top-8 left-1/2 z-10 w-[120%] -translate-x-1/2 [&>*]:!min-h-[360px]" /> */}
 
       {/* Error message */}
       <AnimatePresence>
@@ -196,7 +196,7 @@ const SubscriptionForm = ({
               className="absolute top-1/2 right-[7px] z-20 -translate-y-1/2"
               size="sm"
               type="submit"
-              theme="quaternary"
+              theme="primary"
               disabled={formState !== 'default'}
             >
               <span className="">{submitButtonText}</span>
