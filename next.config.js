@@ -6,21 +6,21 @@ module.exports = {
 
   async redirects() {
     return [
-      {
-        source: '/speakers',
-        destination: '/stage',
-        permanent: true,
-      },
-      {
-        source: '/',
-        destination: '/stage',
-        permanent: true,
-      },
-      {
-        source: '/generate-ticket',
-        destination: '/stage',
-        permanent: true,
-      },
+      // {
+      //   source: '/speakers',
+      //   destination: '/stage',
+      //   permanent: true,
+      // },
+      // {
+      //   source: '/',
+      //   destination: '/stage',
+      //   permanent: true,
+      // },
+      // {
+      //   source: '/generate-ticket',
+      //   destination: '/stage',
+      //   permanent: true,
+      // },
       {
         source: '/agenda',
         destination: '/stage',
