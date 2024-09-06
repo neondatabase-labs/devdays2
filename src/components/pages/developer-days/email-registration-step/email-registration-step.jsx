@@ -45,9 +45,9 @@ const CountdownTimer = () => {
 
 // eslint-disable-next-line no-unused-vars
 const EmailRegistrationStep = ({ onSuccessCallback }) => (
-  <div className="relative pt-[440px]">
+  <div className="relative pt-[440px] xl:pt-[373px]">
     <Image
-      className="absolute w-[1279px] h-auto left-1/2 -translate-x-1/2 -top-[88px]"
+      className="absolute w-[1279px] h-auto left-1/2 -translate-x-1/2 -top-[88px] max-w-none xl:-top-[148px]"
       src={illustration}
       alt="Neon Deploy"
       width={1279}
