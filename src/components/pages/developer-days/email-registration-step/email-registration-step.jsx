@@ -58,16 +58,16 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => (
         <CountdownTimer />
         <div className="relative overflow-hidden mt-3.5">
           <time
-            className="relative text-[32px] tracking-tight leading-[1.2] text-transparent bg-clip-text bg-white"
+            className="relative text-[32px] tracking-tight flex flex-col leading-[1.2] text-transparent bg-clip-text bg-white"
             dateTime="2024-10-01T17:00:00Z"
             style={{
               backgroundImage: 'url(/images/deploy/ellipse.svg)',
-              backgroundSize: '100% 100%',
+              backgroundSize: '294px 63px',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
             }}
           >
-            October 1st, 2024 <br /> 10:00 AM PT
+            <span>October 1st, 2024</span> <span>10:00 AM PT</span>
           </time>
         </div>
       </div>
