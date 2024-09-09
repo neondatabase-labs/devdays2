@@ -8,15 +8,15 @@ const Hero = () => (
   <section className="relative mx-auto pt-10 grid max-w-[1760px] flex-grow grid-cols-12 gap-10 2xl:px-14 2xl:pb-10 xl:pb-0 xl:grid-cols-1 xl:gap-0 xl:px-11 xl:py-11 lg:px-8 lg:py-9 md:px-4 md:py-4 sm:py-0 sm:mt-4">
     <div className="relative z-10 col-span-4 col-start-2 self-center 2xl:col-start-1 2xl:col-span-5 xl:col-span-full xl:self-end xl:text-center max-w-[472px] xl:max-w-2xl xl:mx-auto">
       <GradientLabel className="inline-block" theme="green">
-        November 2nd
+        October 1st
       </GradientLabel>
       <h1 className="text-6xl leading-none tracking-tight mt-3 text-white font-medium lg:text-[58px] md:text-[52px] sm:text-[44px] sm:max-w-[326px] sm:mx-auto">
         Join Neon Live and listen to our speakers
       </h1>
       <p className="mt-7 text-white font-light text-xl leading-[1.3] tracking-[-0.02em] 2xl:text-lg lg:mt-4 lg:text-base">
         Join us at{' '}
-        <time className="text-primary-4" dateTime="2023-11-02T10:00">
-          10:00 AM PT, November 2nd
+        <time className="text-primary-4" dateTime="2024-10-01T17:00:00Z">
+          10:00 AM PT, October 1st
         </time>{' '}
         for presentations about Postgres, scalability, AI, and using Neon with modern developer
         tools.

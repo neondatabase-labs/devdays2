@@ -70,11 +70,17 @@
     @apply relative z-30 h-full w-full bg-black bg-no-repeat px-[1px] py-[1px];
 
     transform: translateX(var(--translate)) rotateY(var(--rotate));
-    transition: background-position var(--duration) linear, transform var(--duration) linear;
+    transition:
+      background-position var(--duration) linear,
+      transform var(--duration) linear;
     will-change: transform;
 
-    background-size: 100%, var(--width) var(--height);
-    background-position: center, left var(--background-x) top 0;
+    background-size:
+      100%,
+      var(--width) var(--height);
+    background-position:
+      center,
+      left var(--background-x) top 0;
 
     clip-path: path(
       'M0 22C0 9.84974 9.84976 0 22 0H768C780.15 0 790 9.84974 790 22V118.268C790 124.466 787.385 130.377 782.799 134.547L753.201 161.453C748.615 165.623 746 171.534 746 177.732V210.268C746 216.466 748.615 222.377 753.201 226.547L782.799 253.453C787.385 257.623 790 263.534 790 269.732V366C790 378.15 780.15 388 768 388H22C9.84974 388 0 378.15 0 366V269.732C0 263.534 2.61477 257.623 7.2012 253.453L36.7988 226.547C41.3852 222.377 44 216.466 44 210.268V177.732C44 171.534 41.3852 165.623 36.7988 161.453L7.2012 134.547C2.61476 130.377 0 124.466 0 118.268V22Z'
@@ -128,11 +134,11 @@
   .ticket-front {
     @apply relative h-full w-full bg-no-repeat md:before:absolute md:before:right-0 md:before:bottom-[36px] md:before:h-[300px] md:before:w-[200px] md:before:bg-gradient-to-t md:before:from-black md:before:to-transparent;
 
-    background-size: 440px 372px;
+    background-size: cover;
     background-position: right 0 bottom 0;
 
     @media screen(2xl) {
-      background-size: 436px 362px;
+      background-size: cover;
     }
 
     @media screen(lg) {
@@ -157,7 +163,7 @@
     }
 
     &.ticket-front-variant-1 {
-      background-image: url('/images/developer-days/elephant-1-large.png');
+      background-image: url('/images/deploy/deploy-1.jpg');
 
       @media screen(lg) {
         background-image: url('/images/developer-days/elephant-1-medium.png');
@@ -169,7 +175,7 @@
     }
 
     &.ticket-front-variant-2 {
-      background-image: url('/images/developer-days/elephant-2-large.png');
+      background-image: url('/images/deploy/deploy-2.jpg');
 
       @media screen(lg) {
         background-image: url('/images/developer-days/elephant-2-medium.png');
@@ -181,7 +187,7 @@
     }
 
     &.ticket-front-variant-3 {
-      background-image: url('/images/developer-days/elephant-3-large.png');
+      background-image: url('/images/deploy/deploy-3.jpg');
 
       @media screen(lg) {
         background-image: url('/images/developer-days/elephant-3-medium.png');
@@ -193,7 +199,7 @@
     }
 
     &.ticket-front-variant-4 {
-      background-image: url('/images/developer-days/elephant-4-large.png');
+      background-image: url('/images/deploy/deploy-4.jpg');
 
       @media screen(lg) {
         background-image: url('/images/developer-days/elephant-4-medium.png');

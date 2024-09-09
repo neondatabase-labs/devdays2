@@ -188,48 +188,33 @@ const DynamicTicket = ({
         >
           <div
             className={clsx('ticket-middle', {
-              'bg-ticket-middle-variant-1 md:bg-ticket-middle-variant-1-vertical':
-                currentColorSchema === '1',
-              'bg-ticket-middle-variant-2 md:bg-ticket-middle-variant-2-vertical':
-                currentColorSchema === '2',
-              'bg-ticket-middle-variant-3 md:bg-ticket-middle-variant-3-vertical':
-                currentColorSchema === '3',
-              'bg-ticket-middle-variant-4 md:bg-ticket-middle-variant-4-vertical':
-                currentColorSchema === '4',
+              // 'bg-ticket-middle-variant-1 md:bg-ticket-middle-variant-1-vertical':
+              //   currentColorSchema === '1',
+              // 'bg-ticket-middle-variant-2 md:bg-ticket-middle-variant-2-vertical':
+              //   currentColorSchema === '2',
+              // 'bg-ticket-middle-variant-3 md:bg-ticket-middle-variant-3-vertical':
+              //   currentColorSchema === '3',
+              // 'bg-ticket-middle-variant-4 md:bg-ticket-middle-variant-4-vertical':
+              //   currentColorSchema === '4',
             })}
           >
             <div
               className={clsx('ticket-front', {
-                'ticket-front-variant-0': isBlankTicket,
+                // 'ticket-front-variant-0': isBlankTicket,
                 'ticket-front-variant-1': elephantColorSchema === '1',
                 'ticket-front-variant-2': elephantColorSchema === '2',
                 'ticket-front-variant-3': elephantColorSchema === '3',
                 'ticket-front-variant-4': elephantColorSchema === '4',
               })}
             >
-              <div className="ticket-content flex flex-col justify-between p-7 pb-6 text-white 2xl:p-6 md:p-5 md:pt-14 md:pb-[61px]">
+              <div className="ticket-content flex justify-between items-start p-7 pb-6 text-white 2xl:p-6 md:p-5 md:pt-14 md:pb-[61px]">
                 <header
                   className={clsx(
                     { 'opacity-20': isBlankTicket },
                     'order-2 ml-[43px] mb-4 self-start 2xl:ml-[42px] 2xl:mb-3 lg:ml-[38px] lg:mt-3 lg:mb-0 md:mt-1 md:ml-0'
                   )}
                 >
-                  <h2
-                    className={clsx(
-                      'min-h-[100px] bg-clip-text font-kallisto text-5xl font-light leading-none text-transparent opacity-90 lg:text-[36px] md:text-4xl',
-                      {
-                        'bg-ticket-text-variant-0': isBlankTicket,
-                        'bg-ticket-text-variant-1': currentColorSchema === '1',
-                        'bg-ticket-text-variant-2': currentColorSchema === '2',
-                        'bg-ticket-text-variant-3': currentColorSchema === '3',
-                        'bg-ticket-text-variant-4': currentColorSchema === '4',
-                      }
-                    )}
-                  >
-                    Neon Dev
-                    <br />
-                    Days 2023
-                  </h2>
+                  <h2 className="sr-only">Neon Deploy</h2>
                 </header>
                 <p
                   className={clsx(
@@ -269,11 +254,11 @@ const DynamicTicket = ({
                   </p>
                   <time
                     dateTime="2023-11-02T10:00"
-                    className="whitespace-nowrap font-mono text-sm font-light uppercase leading-dense tracking-[0.01em] text-white lg:text-[12px] md:text-[12px]"
+                    className="whitespace-nowrap text-sm uppercase leading-dense tracking-[0.01em] text-white lg:text-[12px] md:text-[12px]"
                   >
-                    10 a.m. PT,
+                    10 AM PT,
                     <br />
-                    November 2nd
+                    Oct 01, 2024
                   </time>
                 </footer>
               </div>

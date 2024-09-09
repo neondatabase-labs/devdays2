@@ -10,8 +10,9 @@ import buildOgImageUrl from 'utils/build-og-image-url';
 import getMetadata from 'utils/get-metadata';
 import prisma from 'utils/prisma';
 
+// eslint-disable-next-line react/prop-types
 const TicketEditPage = async ({ params }) => {
-  // eslint-disable-next-line no-use-before-define
+  // eslint-disable-next-line no-use-before-define, react/prop-types
   const userData = await getTicketData(params.handle);
 
   if (!userData) return notFound();
@@ -29,8 +30,8 @@ const TicketEditPage = async ({ params }) => {
             Ticket
           </h1>
           <p className="relative z-50 mt-5 max-w-[610px] font-mono text-[1.15rem] font-light leading-tight tracking-tight text-white 2xl:max-w-[500px] 1xl:max-w-[420px] xl:mx-auto xl:max-w-[700px] xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base">
-            Choose the ticket color and gather a watch party for the upcoming Neon Developer Days!
-            See you on <time dateTime="2023-11-02T10:00">November 2nd, 10 a.m. PT</time>
+            Choose the ticket color and gather a watch party for the upcoming Neon Deploy! See you
+            on <time dateTime="2024-10-01T17:00:00Z">October 1st, 10 a.m. PT</time>
           </p>
           <Link
             className="pointer-events-auto inline-flex items-end text-primary-4 mt-[18px] text-lg leading-none tracking-[-0.02em] underline decoration-primary-4/40 underline-offset-[8px] hover:decoration-primary-4 transition-colors duration-200 lg:text-base"

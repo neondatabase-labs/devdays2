@@ -36,7 +36,7 @@ const renderer = ({ days, hours, minutes, seconds, completed }) => {
 };
 
 const CountdownTimer = () => {
-  const targetDate = new Date('2024-11-02T18:00:00Z').getTime();
+  const targetDate = new Date('2024-10-01T17:00:00Z').getTime();
   const now = new Date().getTime();
   const difference = targetDate - now;
 
@@ -59,9 +59,9 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => (
         <div className="relative overflow-hidden mt-3.5">
           <time
             className="relative text-[32px] tracking-tight leading-[1.2] text-white"
-            dateTime="2024-11-02T10:00:00Z"
+            dateTime="2024-10-01T17:00:00Z"
           >
-            November 2nd, 2024 <br /> 10:00 AM PT
+            October 1st, 2024 <br /> 10:00 AM PT
           </time>
           {/* <span className="absolute w-[214px] h-[60px] bottom-[calc(100%-10px)] left-1/2 -translate-x-1/2 bg-[#66B2DD] rounded-full blur-[30px] opacity-70 pointer-events-none mix-blend-multiply" /> */}
         </div>
