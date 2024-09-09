@@ -65,6 +65,10 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => (
               backgroundSize: '294px 63px',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
+              maskImage: 'radial-gradient(ellipse at 50% 50%, #D9D9D9 60%, transparent)',
+              maskSize: '100%',
+              maskRepeat: 'no-repeat',
+              maskPosition: 'center',
             }}
           >
             <span>October 1st, 2024</span> <span>10:00 AM PT</span>
