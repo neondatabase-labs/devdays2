@@ -52,6 +52,7 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => (
       alt="Neon Deploy"
       width={1279}
       height={808}
+      priority
     />
     <div className="flex flex-col justify-center text-center items-center relative z-10">
       <div className="relative flex flex-col items-center">
