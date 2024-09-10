@@ -1,12 +1,9 @@
 'use client';
 
-import Image from 'next/image';
-import PropTypes from 'prop-types';
 import Countdown from 'react-countdown';
 
 import SubscriptionForm from 'components/shared/subscription-form';
 import { HUBSPOT_DEPLOY_FORM_ID } from 'constants/forms';
-import illustration from 'images/deploy/illustration.jpg';
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
@@ -43,19 +40,20 @@ const CountdownTimer = () => {
   return <Countdown date={Date.now() + difference} renderer={renderer} />;
 };
 
-// eslint-disable-next-line no-unused-vars
-const EmailRegistrationStep = ({ onSuccessCallback }) => (
+const EmailRegistrationStep = () => (
   <div className="flex flex-col items-center">
-    <Image
-      className="w-[960px] h-auto max-w-none mt-[53px] xl:-mt-20 lg:w-[870px] lg:-mt-[85px] md:w-[630px] xs:w-[420px] xs:-mt-10"
-      src={illustration}
-      alt="Neon Deploy"
-      width={960}
-      height={604}
-      quality={100}
-      priority
-    />
-    <div className="flex flex-col justify-center text-center items-center relative z-10 -mt-[216px] max-w-[512px] w-full lg:-mt-48 md:-mt-36 xs:-mt-[90px]">
+    <video
+      className="w-[1049px] max-w-none mt-7 xl:-mt-[104px] lg:w-[870px] lg:-mt-[85px] md:w-[630px] xs:w-[420px] xs:-mt-10"
+      autoPlay
+      loop
+      muted
+      playsInline
+    >
+      <source type="video/webm" src="/video/deploy.webm" />
+      <source type="video/mp4" src="/video/deploy.mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div className="flex flex-col justify-center text-center items-center relative z-10 -mt-[204px] max-w-[512px] w-full lg:-mt-48 md:-mt-36 xs:-mt-[90px]">
       <div className="relative flex flex-col items-center">
         <CountdownTimer />
         <div className="relative overflow-hidden mt-3.5 sm:mt-2.5">
@@ -92,9 +90,5 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => (
     </div>
   </div>
 );
-
-EmailRegistrationStep.propTypes = {
-  onSuccessCallback: PropTypes.func,
-};
 
 export default EmailRegistrationStep;

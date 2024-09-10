@@ -14,7 +14,7 @@ const Stage = () => {
   return (
     <>
       <div className="flex flex-col bg-live-video">
-        <h1 className="sr-only">Neon Developer Days Live translation</h1>
+        <h1 className="sr-only">Neon Deploy Live translation</h1>
         <div className="flex grow items-center">
           <div className="relative w-full pb-[56.25%]">
             <iframe

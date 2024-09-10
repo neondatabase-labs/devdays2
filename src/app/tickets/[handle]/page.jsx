@@ -28,7 +28,7 @@ const TicketPage = async ({ params }) => {
             Ticket
           </h1>
           <p className="relative z-50 mt-5 max-w-[610px] font-mono text-[1.15rem] font-light leading-tight tracking-tight text-white 2xl:max-w-[500px] 1xl:max-w-[420px] xl:mx-auto xl:max-w-[700px] xl:text-lg xl:leading-[1.375] xl:tracking-tighter lg:mt-4 lg:text-base">
-            Join {userName.split(' ')[0]} at Neon Developer Days on{' '}
+            Join {userName.split(' ')[0]} at Neon Deploy on{' '}
             <time dateTime="2024-10-01T17:00:00Z">October 1st, 10 a.m. PT</time>
           </p>
           <Link

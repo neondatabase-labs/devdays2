@@ -1,4 +1,4 @@
-# Neon Developer Days Next.js
+# Neon Deploy Next.js
 
 ## Table of Contents
 
