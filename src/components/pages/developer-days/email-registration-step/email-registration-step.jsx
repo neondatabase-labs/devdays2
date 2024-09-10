@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 import Countdown from 'react-countdown';
 
 import SubscriptionForm from 'components/shared/subscription-form';
-import { HUBSPOT_DEVELOPER_DAYS_3_FORM_ID } from 'constants/forms';
+import { HUBSPOT_DEPLOY_FORM_ID } from 'constants/forms';
 import illustration from 'images/deploy/illustration.jpg';
 
 const renderer = ({ days, hours, minutes, seconds, completed }) => {
   if (completed) {
     // Render a completed state
-    return <div>Event has started!</div>;
+    return <div className="text-white font-medium leading-none">Event has started!</div>;
   }
   // Render a countdown
   return (
@@ -45,28 +45,29 @@ const CountdownTimer = () => {
 
 // eslint-disable-next-line no-unused-vars
 const EmailRegistrationStep = ({ onSuccessCallback }) => (
-  <div className="relative pt-[440px] xl:pt-[373px]">
+  <div className="flex flex-col items-center">
     <Image
-      className="absolute w-[1279px] h-auto left-1/2 -translate-x-1/2 -top-[88px] max-w-none xl:-top-[148px]"
+      className="w-[960px] h-auto max-w-none mt-[53px] xl:-mt-20 lg:w-[870px] lg:-mt-[85px] md:w-[630px] xs:w-[420px] xs:-mt-10"
       src={illustration}
       alt="Neon Deploy"
-      width={1279}
-      height={808}
+      width={960}
+      height={604}
+      quality={100}
       priority
     />
-    <div className="flex flex-col justify-center text-center items-center relative z-10">
+    <div className="flex flex-col justify-center text-center items-center relative z-10 -mt-[216px] max-w-[512px] w-full lg:-mt-48 md:-mt-36 xs:-mt-[90px]">
       <div className="relative flex flex-col items-center">
         <CountdownTimer />
-        <div className="relative overflow-hidden mt-3.5">
+        <div className="relative overflow-hidden mt-3.5 sm:mt-2.5">
           <time
-            className="relative text-[32px] tracking-tight flex flex-col leading-[1.2] text-transparent bg-clip-text bg-white"
+            className="relative text-[32px] tracking-tight flex flex-col leading-[1.2] text-transparent bg-clip-text bg-white sm:text-[28px]"
             dateTime="2024-10-01T17:00:00Z"
             style={{
               backgroundImage: 'url(/images/deploy/ellipse.svg)',
               backgroundSize: '294px 63px',
               backgroundRepeat: 'no-repeat',
               backgroundPosition: 'center',
-              maskImage: 'radial-gradient(ellipse at 50% 50%, #D9D9D9 60%, transparent)',
+              maskImage: 'radial-gradient(ellipse at 50% 50%, #D9D9D9 70%, transparent)',
               maskSize: '100%',
               maskRepeat: 'no-repeat',
               maskPosition: 'center',
@@ -76,17 +77,17 @@ const EmailRegistrationStep = ({ onSuccessCallback }) => (
           </time>
         </div>
       </div>
-      <p className="font-light text-lg leading-[1.3] mt-3 text-gray-60 max-w-[448px]">
+      <p className="font-light text-lg leading-[1.3] mt-3 text-gray-60 max-w-[448px] xs:max-w-[320px] sm:text-base">
         Join us for presentations about Postgres, scalability, AI, and using Neon with modern
         developer tools.
       </p>
       <SubscriptionForm
-        className="mt-8 md:mt-7"
+        className="mt-8 lg:mt-6"
         successText="Thanks for registering!"
         submitButtonText="Register"
-        size="sm"
-        localStorageKey="submittedEmailDeveloperDays3Form"
-        formId={HUBSPOT_DEVELOPER_DAYS_3_FORM_ID}
+        size="xs"
+        localStorageKey="submittedEmailDeployForm"
+        formId={HUBSPOT_DEPLOY_FORM_ID}
       />
     </div>
   </div>

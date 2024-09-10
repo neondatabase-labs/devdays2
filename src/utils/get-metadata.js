@@ -34,7 +34,6 @@ export default function getMetadata({
     },
     manifest: `${SITE_URL}/manifest.json`,
     robots,
-    themeColor: '#0c0d0d',
     icons: {
       icon: '/favicon/favicon.png',
       apple: [

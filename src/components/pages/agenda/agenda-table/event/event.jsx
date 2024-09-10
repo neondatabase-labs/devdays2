@@ -25,7 +25,7 @@ const Event = ({
       role={bio ? 'button' : 'row'}
       onClick={openModal}
     >
-      <td className="py-4 pr-4 sm:pr-0 sm:py-0 sm:mt-3.5 sm:flex sm:justify-between sm:items-center xs:flex-col">
+      <td className="py-4 pr-4 sm:pr-0 sm:py-0 sm:mt-3.5 sm:flex sm:justify-between sm:items-center xs:items-start xs:flex-col">
         <div
           className={clsx(
             'flex items-center gap-x-2.5 group sm:w-full',

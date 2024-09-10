@@ -15,7 +15,7 @@ const SocialShare = ({ className = null, url }) => {
   return (
     <div
       className={clsx(
-        'pointer-events-none relative z-50 flex items-center xl:justify-center',
+        'pointer-events-none relative z-50 flex items-center xl:justify-center md:flex-col md:gap-y-3.5',
         className
       )}
     >
@@ -44,7 +44,7 @@ const SocialShare = ({ className = null, url }) => {
           </p>
         </Button>
       </div>
-      <h2 className="ml-6 shrink-0 font-sans text-sm leading-[1.375] tracking-[0.04em] text-gray-5 2xl:hidden">
+      <h2 className="ml-6 shrink-0 font-sans text-sm leading-[1.375] tracking-[0.04em] text-gray-5 flat-none md:flat-breaks md:ml-0 text-start">
         Share with <br /> your friends
       </h2>
     </div>

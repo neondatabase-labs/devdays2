@@ -164,7 +164,7 @@ const DynamicTicket = ({
   }, []);
 
   return (
-    <div className="xl:mt-11 lg:mt-10 md:mt-6 md:flex md:flex-col-reverse">
+    <div className="xl:mt-11 lg:mt-10 md:mt-14 md:flex md:flex-col md:gap-y-9">
       <section
         className={clsx('ticket xl:mx-auto', {
           'ticket-blank': isBlankTicket,
@@ -186,28 +186,17 @@ const DynamicTicket = ({
             'bg-ticket-border-variant-4': currentColorSchema === '4',
           })}
         >
-          <div
-            className={clsx('ticket-middle', {
-              // 'bg-ticket-middle-variant-1 md:bg-ticket-middle-variant-1-vertical':
-              //   currentColorSchema === '1',
-              // 'bg-ticket-middle-variant-2 md:bg-ticket-middle-variant-2-vertical':
-              //   currentColorSchema === '2',
-              // 'bg-ticket-middle-variant-3 md:bg-ticket-middle-variant-3-vertical':
-              //   currentColorSchema === '3',
-              // 'bg-ticket-middle-variant-4 md:bg-ticket-middle-variant-4-vertical':
-              //   currentColorSchema === '4',
-            })}
-          >
+          <div className={clsx('ticket-middle')}>
             <div
               className={clsx('ticket-front', {
-                // 'ticket-front-variant-0': isBlankTicket,
+                'ticket-front-variant-0': isBlankTicket,
                 'ticket-front-variant-1': elephantColorSchema === '1',
                 'ticket-front-variant-2': elephantColorSchema === '2',
                 'ticket-front-variant-3': elephantColorSchema === '3',
                 'ticket-front-variant-4': elephantColorSchema === '4',
               })}
             >
-              <div className="ticket-content flex justify-between items-start p-7 pb-6 text-white 2xl:p-6 md:p-5 md:pt-14 md:pb-[61px]">
+              <div className="ticket-content flex justify-between items-start p-7 pb-6 text-white 2xl:p-6 md:p-5 md:pt-20 md:pb-[61px] md:flex-col md:justify-start">
                 <header
                   className={clsx(
                     { 'opacity-20': isBlankTicket },
@@ -246,7 +235,7 @@ const DynamicTicket = ({
                 <footer
                   className={clsx(
                     { 'opacity-20': isBlankTicket },
-                    'order-3 flex items-center gap-2 md:mt-auto'
+                    'order-3 flex items-center gap-2 md:mt-7'
                   )}
                 >
                   <p className="trac whitespace-nowrap font-kallisto text-[36px] font-light leading-none tracking-[0.08em] text-white lg:text-3xl md:text-[28px] xxs:text-[26px]">

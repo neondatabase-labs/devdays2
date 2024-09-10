@@ -24,7 +24,14 @@ const appearAndExitAnimationVariants = {
 const sizeClassNames = {
   sm: {
     form: 'relative max-w-[540px] xl:max-w-[456px] lg:max-w-[464px]',
-    input: 'h-[64px] text-lg pl-6 border xl:pl-5 md:h-[56px]',
+    input: 'h-16 text-lg pl-6 border xl:pl-5 md:h-14',
+    loading: 'right-[7px]',
+    success: 'right-[7px]',
+    stateIcon: 'w-12 h-12',
+  },
+  xs: {
+    form: 'relative max-w-[512px]',
+    input: 'h-16 text-lg pl-6 border xl:pl-5 lg:h-14',
     loading: 'right-[7px]',
     success: 'right-[7px]',
     stateIcon: 'w-12 h-12',
@@ -135,7 +142,7 @@ const SubscriptionForm = ({
 
   return (
     <motion.form
-      className={clsx('xl:!w-auto xl:!opacity-100', className, sizeClassNames[size].form)}
+      className={clsx(className, sizeClassNames[size].form)}
       initial={{ opacity: 0, width: 0 }}
       animate={{ opacity: 1, width: `100%` }}
       transition={{

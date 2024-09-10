@@ -9,6 +9,7 @@ export const viewport = {
   width: 'device-width',
   initialScale: 1,
   viewportFit: 'cover',
+  themeColor: '#0c0d0d',
 };
 
 // eslint-disable-next-line react/prop-types

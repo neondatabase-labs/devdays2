@@ -44,8 +44,8 @@ const DeveloperDays2Page = () => (
     />
     <div className="relative mx-auto max-w-[1760px] w-full 2xl:px-14 xl:px-11 xl:py-11 lg:px-8 lg:py-9 md:px-4 md:py-4">
       <EmailRegistrationStep />
-      <AgendaTable />
     </div>
+    <AgendaTable />
   </Layout>
 );
 
